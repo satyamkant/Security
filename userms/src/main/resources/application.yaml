@@ -1,6 +1,6 @@
 spring:
   application:
-    name: userms
+    name: UserMs
   config:
     import: consul://localhost:8500/config/User-Ms
   cloud:
