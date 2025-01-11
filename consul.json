@@ -1,0 +1,52 @@
+logging:
+  level:
+    org:
+      springframework:
+        security:
+          access: DEBUG
+          authentication: DEBUG
+          web: DEBUG
+
+server:
+  port: 2000
+
+EXPIRATION_TIME: 24
+SECRET_KEY: fea0650a5aa5ea8de35fcfed6b188977be28dbe7880fe5e9125a1db8f4ececffb24a08d638c4e04a14ae48ac38bcba5dfa3042c219f84dec3aabecb3f4eb7a57b26bef86a6d40ab628139a3ec0f2ad5666d773e48009ceb2ffb042815d919054f09b2537138c3105cf4cbfff6c8102cb997602af8bfa1ba7608e8d5fc7aadd03f3c0ed970ec801731bb47dc3a15a153c741dfdb97230725f7c83913c31014cefebf173e007a55c5c55ee6f7c864fd05b407bfce01c5f1902cc4205eeef3a47740a823ad8190adf97cc4494b496e26cc99e31a4a3ccee867f5cb1148e278e17a80a616f6ee16ecd17977290ab784a6505f32e9e77ff4381d3297196f1b320f1e6
+DOMAIN: localhost
+
+USER_DB_URL_GET_USER: http://UserMs/user/getuser
+USER_DB_URL_REGISTER_USER: http://UserMs/user/register
+
+        ////////////////// securityMs end ///////////////
+
+
+
+ /////////////////// UserMs start //////////////////
+
+server:
+  port: 2003
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type: trace
+
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/userms
+    username: root
+    password: qwerty@123
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+  sql:
+    init:
+      mode: always
