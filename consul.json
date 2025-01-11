@@ -50,3 +50,7 @@ spring:
   sql:
     init:
       mode: always
+
+
+/// cd into the folder where consul exec is and then run below command consul data will be in root directory
+./consul agent -server -data-dir ~/consul-data -ui -bootstrap-expect=1 -bind=127.0.0.1
